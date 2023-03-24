@@ -1,0 +1,14 @@
+dataset: [DATA_Epp_4_task]
+subject: [sub-p001]
+task: [task-control]
+in_folder: path_to_input_folder
+out_folder: path_to_output_folder
+interm_res_folder: path_to_interm_results_folder
+motion_from_pca: False
+npy_file: path_to_motion_folder/Motion_Curves_val_Fold_1.npy
+motion_curve_nr: 0
+simulation_nr: 0
+motion_thr: 0.5
+include_transform: True
+include_inhomog: True
+save_magn_nifti: False

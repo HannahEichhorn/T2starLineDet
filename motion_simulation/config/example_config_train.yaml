@@ -1,0 +1,15 @@
+dataset: [DATA_Epp_4_task, DATA_Epp_4_task, DATA_Hechler, DATA_Hechler]
+subject: [sub-p001, sub-p001, sub-p002, sub-p001]
+task: [task-control, task-mem, task-rand, task-struct]
+in_folder: path_to_input_folder
+out_folder: path_to_output_folder
+interm_res_folder: path_to_interm_results_folder
+motion_folder: path_to_motion_folder
+motion_from_pca: True
+train_test_scenario: train
+simulation_nr: [0, 1]
+motion_level: [0, 0.4]
+motion_thr: 0.5
+include_transform: True
+include_inhomog: True
+save_magn_nifti: False

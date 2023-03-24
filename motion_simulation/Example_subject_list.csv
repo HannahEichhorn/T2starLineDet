@@ -1,0 +1,8 @@
+folder	subject-task	consensus
+DATA_Bose/	sub-s001	2
+DATA_Bose/	sub-s002	1
+DATA_Bose/	sub-s003	0
+DATA_Epp_4_task/	sub-p001-calc	0
+DATA_Epp_4_task/	sub-p001-control	1
+DATA_Epp_4_task/	sub-p001-mem	2
+DATA_Epp_4_task/	sub-p001-rest	3
