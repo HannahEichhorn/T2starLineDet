@@ -9,7 +9,7 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 ## Contents:
 
 - `motion_simulation`: simulating realistic motion artefacts in T2*w GRE MRI data
-- `line_det_network`: training and testing a k-space line detection network - code will be added soon
+- `line_det_network`: training and testing a k-space line detection network, using the  [IML-CompAI Framework](https://github.com/compai-lab/iml-dl) 
 - `evaluation`: evaluating the proposed method, using the [medutils package](https://github.com/khammernik/medutils) for the TV reconstruction
 
 
@@ -19,7 +19,7 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
     ```
     cd ${TARGET_DIR}/T2starLineDet
     conda env create -f conda_environment.yaml
-    source activate t2star_linedet *or* conda t2star_linedet iml_py308
+    source activate t2star_linedet *or* conda activate t2star_linedet
     ```
 
 2. Install pytorch with cuda:
@@ -44,7 +44,7 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 
 2) Line Detection Network:
 
-    Instructions will be added as soon as code is available
+    Follow the instructions in `line_det_network/README.md`
 
 3) Final Evaluations:
 
