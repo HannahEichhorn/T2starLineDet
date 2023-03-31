@@ -9,7 +9,7 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 ## Contents:
 
 - `motion_simulation`: simulating realistic motion artefacts in T2*w GRE MRI data
-- `line_det_network`: training and testing a k-space line detection network, using the  [IML-CompAI Framework](https://github.com/compai-lab/iml-dl) 
+- `line_det_network`: training and testing a k-space line detection network, using the [IML-CompAI Framework](https://github.com/compai-lab/iml-dl) 
 - `evaluation`: evaluating the proposed method, using the [medutils package](https://github.com/khammernik/medutils) for the TV reconstruction
 
 
@@ -27,7 +27,7 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
     conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
     ```
 
-3. For setting up wandb please refer to the [IML-CompAI Framework](https://).
+3. For setting up wandb please refer to the [IML-CompAI Framework](https://github.com/compai-lab/iml-dl).
 
 
 ## Steps to reproduce the analysis:
