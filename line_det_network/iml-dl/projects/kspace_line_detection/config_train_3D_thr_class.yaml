@@ -1,0 +1,101 @@
+name: Train_Weight5BCE_Thr10mm_drop_02_wd1e-3_Fold1
+train_batch_size: &tbatch_size 64
+downstream_batch_size: &dbatch_size 64
+crop_readout_dim: &crop_readout False
+subst_with_orig: &tsubst 0.5
+#
+# Experiment
+#
+experiment:
+  name: KspaceLineDetection(T2Star)_ThreshClass_3D
+  task: train
+  weights: 
+#
+device: gpu
+configurator:
+  module_name: core.Configurator
+  class_name: DLConfigurator
+  params:
+#
+# Model
+#
+model:
+  module_name: model_zoo.cnn_line_detection
+  class_name: RealValCNNLineDetNew
+  params:
+    input_dim: 2
+    input_size: [12, 92, 112]
+    crop_readout: *crop_readout
+    output_size: [1, 92]
+    first_filters: 8
+    last_filters: [8]
+    kernel_size: 3
+    num_layer: 4
+    activation: "relu"
+    normalization: "BatchNorm"
+    dropout: 0.2
+#
+# Trainer
+#
+trainer:
+  module_name: projects.kspace_line_detection.Trainer
+  class_name: PTrainer
+  params:
+    checkpoint_path: ./weights/    #ToDo: insert your output path here
+    nr_epochs: 300
+    patience: 300
+    # Loss
+    loss:
+      module_name: optim.losses.classification_losses
+      class_name: WeightedCrossEntropyAcrossLines
+      params:
+        weight_cl0: 5
+    optimizer_params:
+      lr: 5.0e-4
+      weight_decay: 1.0e-3
+  # Data Loader
+  data_loader:
+    module_name: data.T2star_loader
+    class_name: T2starLoader
+    params:
+      args:
+        batch_size: *tbatch_size
+        train_data_path: ./data/links_to_data/train_T2star_b0_rigid_Fold_1/
+        val_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
+        test_data_path: ./links_to_data/val_T2star_b0_rigid_Fold_1/
+        only_brainmask_slices: True
+        bm_thr: 0.3
+        normalize: "line_wise"
+        soft_mask: False
+        subst_with_orig: *tsubst
+        crop_readout: *crop_readout
+#
+# Downstream tasks
+#
+downstream_tasks:
+  T2StarLineDetection:
+    module_name: projects.kspace_line_detection.DownstreamEvaluator
+    class_name: PDownstreamEvaluator
+    checkpoint_path: ./output_path/    #ToDo: insert your output path here
+    data_loader:
+      module_name: data.T2star_loader
+      class_name: T2starLoader
+      params:
+        args:
+          batch_size: *dbatch_size
+          only_brainmask_slices: True
+          bm_thr: 0.3
+          normalize: "line_wise"
+          soft_mask: False
+          subst_with_orig: *tsubst
+          crop_readout: *crop_readout
+      datasets:
+        train:
+          args:
+            test_data_path: ./data/links_to_data/train_T2star_b0_rigid_Fold_1/            
+        val:
+          args:
+            test_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
+        test:
+          args:
+            test_data_path: ./data/links_to_data/test_T2star_b0_rigid/
