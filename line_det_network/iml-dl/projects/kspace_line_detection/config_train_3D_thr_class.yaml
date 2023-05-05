@@ -62,7 +62,7 @@ trainer:
         batch_size: *tbatch_size
         train_data_path: ./data/links_to_data/train_T2star_b0_rigid_Fold_1/
         val_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
-        test_data_path: ./links_to_data/val_T2star_b0_rigid_Fold_1/
+        test_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
         only_brainmask_slices: True
         bm_thr: 0.3
         normalize: "line_wise"
