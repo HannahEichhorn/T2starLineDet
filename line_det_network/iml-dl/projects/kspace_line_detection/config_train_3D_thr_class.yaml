@@ -60,9 +60,10 @@ trainer:
     params:
       args:
         batch_size: *tbatch_size
-        train_data_path: ./data/links_to_data/train_T2star_b0_rigid_Fold_1/
-        val_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
-        test_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
+        data_dir:
+          train: './data/links_to_data/train_T2star_b0_rigid_Fold_1/'
+          val: './data/links_to_data/val_T2star_b0_rigid_Fold_1/'
+          test: './data/links_to_data/val_T2star_b0_rigid_Fold_1/'
         only_brainmask_slices: True
         bm_thr: 0.3
         normalize: "line_wise"
@@ -91,11 +92,11 @@ downstream_tasks:
           crop_readout: *crop_readout
       datasets:
         train:
-          args:
-            test_data_path: ./data/links_to_data/train_T2star_b0_rigid_Fold_1/            
+          data_dir:
+            test: './data/links_to_data/train_T2star_b0_rigid_Fold_1/'
         val:
-          args:
-            test_data_path: ./data/links_to_data/val_T2star_b0_rigid_Fold_1/
+          data_dir:
+            test: './data/links_to_data/val_T2star_b0_rigid_Fold_1/'
         test:
-          args:
-            test_data_path: ./data/links_to_data/test_T2star_b0_rigid/
+          data_dir:
+            test: './data/links_to_data/test_T2star_b0_rigid/'
