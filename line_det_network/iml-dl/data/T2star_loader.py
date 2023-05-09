@@ -177,24 +177,27 @@ class T2starLoader(pl.LightningDataModule):
         self.input_2d = args['input_2d'] if 'input_2d' in akeys else False
         self.drop_last = False if self.overfit_one_sample else True
         self.num_workers = args['num_workers'] if 'num_workers' in akeys else 2
-        if 'train_data_path' in akeys:
-            self.train_data_path = args['train_data_path']
-        else:
-            logging.info('No training data path specified.')
-        if 'val_data_path' in akeys:
-            self.val_data_path = args['val_data_path']
-        else:
-            logging.info('No validation data path specified.')
-        if 'test_data_path' in akeys:
-            self.test_data_path = args['test_data_path']
-        else:
-            logging.info('No test data path specified.')
+        # if 'train_data_path' in akeys:
+        #     self.train_data_path = args['train_data_path']
+        # else:
+        #     logging.info('No training data path specified.')
+        # if 'val_data_path' in akeys:
+        #     self.val_data_path = args['val_data_path']
+        # else:
+        #     logging.info('No validation data path specified.')
+        # if 'test_data_path' in akeys:
+        #     self.test_data_path = args['test_data_path']
+        # else:
+        #     logging.info('No test data path specified.')
+        self.data_dir = args['data_dir'] if 'data_dir' in akeys else None
+        assert type(self.data_dir) is dict, 'DefaultDataset::init():  data_dir variable should be a dictionary'
+
 
     def train_dataloader(self):
         """Loads a batch of training data consisting of kspace data, target
         mask, filenames and slice indices of the associated h5 files.
         """
-        trainset = T2starDataset(path=self.train_data_path,
+        trainset = T2starDataset(self.data_dir['train'],    #path=self.train_data_path,
                                  only_bm_slices=self.only_brainmask_slices,
                                  bm_thr=self.bm_thr,
                                  normalize=self.normalize,
@@ -220,7 +223,7 @@ class T2starLoader(pl.LightningDataModule):
         """Loads a batch of validation data consisting of kspace data, target
         mask, filenames and slice indices of the associated h5 files.
         """
-        valset = T2starDataset(self.val_data_path,
+        valset = T2starDataset(self.data_dir['val'],    #self.val_data_path,
                                only_bm_slices=self.only_brainmask_slices,
                                bm_thr=self.bm_thr,
                                normalize=self.normalize,
@@ -248,7 +251,7 @@ class T2starLoader(pl.LightningDataModule):
         test data loader 'drop_last' is enabled, which means that no data will
         be loaded if the batch size is larger than the size of the test set.
         """
-        testset = T2starDataset(self.test_data_path,
+        testset = T2starDataset(self.data_dir['test'],    #self.test_data_path,
                                 only_bm_slices=self.only_brainmask_slices,
                                 bm_thr=self.bm_thr,
                                 normalize=self.normalize,

@@ -24,8 +24,9 @@ All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 
 2. Install pytorch with cuda:
     ```
-    conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
+    conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
     pip install torchinfo
+    conda install -c conda-forge pytorch-lightning
     ```
 
 3. For setting up wandb please refer to the [IML-CompAI Framework](https://github.com/compai-lab/iml-dl).
