@@ -8,7 +8,7 @@ For this part of the work, code from the following framework was used: [IML-Comp
 In this folder, a copy of the above code is added with the following changes:
 
 - `iml-dl/projects/kspace_line_detection/`: contains additional project-specific code
-- `iml-dl/weights/kspace_line_detection/`: contains the weights of the trained model
+- `iml-dl/weights/kspace_line_detection/`: contains the weights of the trained model (for different simulation thresholds)
 - `iml-dl/core/Trainer.py/`: lines 86-88 are commented out and performed with correct input size in `iml-dl/projects/kspace_line_detection/Trainer.py`
 
 
