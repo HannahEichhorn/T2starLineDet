@@ -1,6 +1,6 @@
-# Deep Learning-Based Detection of Motion-Affected k-Space Lines for T2*-Weighted MRI
+# Physics-Aware Motion Simulation for T2*-Weighted Brain MRI
 
-Paper submitted to MICCAI 2023 | [link to preprint](https://arxiv.org/abs/2303.10987).
+Paper submitted to MICCAI 2023 SASHIMI workshop.
 
 
 All computations were performed using Python 3.8.12 and PyTorch 1.13.0.

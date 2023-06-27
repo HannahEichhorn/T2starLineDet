@@ -75,7 +75,7 @@ def quick_imshow(data, indices, title=None, vmin=None, vmax=None):
         data = np.abs(data)
     for i in indices:
         data = data[i]
-    plt.imshow(data[:, ::-1].T, cmap='gray', vmin=vmin, vmax=vmax)
+    plt.imshow(data[::-1, ::-1].T, cmap='gray', vmin=vmin, vmax=vmax)
     plt.axis('off')
     if title:
         plt.title(title)

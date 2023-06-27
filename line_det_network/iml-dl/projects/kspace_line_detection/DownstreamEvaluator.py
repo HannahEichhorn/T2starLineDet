@@ -2,6 +2,7 @@ import logging
 import os.path
 import os
 import torch.nn
+import numpy as np
 logging.getLogger("matplotlib").setLevel(logging.WARNING)
 import wandb
 import plotly.graph_objects as go
