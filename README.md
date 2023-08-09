@@ -1,6 +1,6 @@
 # Physics-Aware Motion Simulation for T2*-Weighted Brain MRI
 
-Paper submitted to MICCAI 2023 SASHIMI workshop.
+Paper accepted at [MICCAI 2023 SASHIMI workshop](https://2023.sashimi-workshop.org/).
 
 
 All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
@@ -78,11 +78,11 @@ For a more detailed description of the results please refer to our paper.
 If you use this code, please cite
 
 ```
-@misc{eichhorn2023deep,
-      title={Deep Learning-Based Detection of Motion-Affected k-Space Lines for {T2}*-Weighted {MRI}}, 
+@InProceedings{eichhorn2023deep,
+      title={Physics-Aware Motion Simulation for {T2*}-Weighted Brain {MRI}}, 
       author={Hannah Eichhorn and Kerstin Hammernik and Veronika Spieker and Samira M. Epp and Daniel Rueckert and Christine Preibisch and Julia A. Schnabel},
+      booktitle="Simulation and Synthesis in Medical Imaging",
       year={2023},
-      eprint={2303.10987},
-      archivePrefix={arXiv}
+      publisher={Springer International Publishing}
 }
 ```
