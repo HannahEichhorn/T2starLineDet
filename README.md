@@ -81,7 +81,7 @@ If you use this code, please cite
 @InProceedings{eichhorn2023deep,
       title={Physics-Aware Motion Simulation for {T2*}-Weighted Brain {MRI}}, 
       author={Hannah Eichhorn and Kerstin Hammernik and Veronika Spieker and Samira M. Epp and Daniel Rueckert and Christine Preibisch and Julia A. Schnabel},
-      booktitle="Simulation and Synthesis in Medical Imaging",
+      booktitle="Simulation and Synthesis in Medical Imaging. SASHIMI 2023. Lecture Notes in Computer Science",
       year={2023},
       publisher={Springer International Publishing}
 }
