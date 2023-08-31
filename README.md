@@ -1,19 +1,36 @@
 # Physics-Aware Motion Simulation for T2*-Weighted Brain MRI
 
-Paper accepted at [MICCAI 2023 SASHIMI workshop](https://2023.sashimi-workshop.org/).
+**Hannah Eichhorn**, Kerstin Hammernik, Veronika Spieker, Samira M. Epp, Daniel Rueckert, Christine Preibisch, Julia A. Schnabel
+
+Paper accepted at [MICCAI 2023 SASHIMI workshop](https://2023.sashimi-workshop.org/) | [Preprint](https://arxiv.org/abs/2303.10987).
+
+**Abstract:** *In this work, we propose a realistic, physics-aware motion simulation procedure for T2\*-weighted magnetic resonance imaging (MRI) to improve learning-based motion correction. As T2\*-weighted MRI is highly sensitive to motion-related changes in magnetic field inhomogeneities, it is of utmost importance to include physics information in the simulation. Additionally, current motion simulations often only assume simplified motion patterns. Our simulations, on the other hand, include real recorded subject motion and realistic effects of motion-induced magnetic field inhomogeneity changes. We demonstrate the use of such simulated data by training a convolutional neural network to detect the presence of motion in affected k-space lines. The network accurately detects motion-affected k-space lines for simulated displacements down to ≥ 0.5mm (accuracy on test set: 92.5%). Finally, our results demonstrate exciting opportunities of simulation-based k-space line detection combined with more powerful reconstruction methods.*
+
+## Citation
+If you use this code, please cite our paper:
+
+```
+@InProceedings{eichhorn2023deep,
+      title={Physics-Aware Motion Simulation for {T2*}-Weighted Brain {MRI}}, 
+      author={Hannah Eichhorn and Kerstin Hammernik and Veronika Spieker and Samira M. Epp and Daniel Rueckert and Christine Preibisch and Julia A. Schnabel},
+      booktitle="Simulation and Synthesis in Medical Imaging. SASHIMI 2023. Lecture Notes in Computer Science",
+      year={2023},
+      publisher={Springer International Publishing}
+}
+```
 
 
-All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 
-
-## Contents:
+## Contents of this repository:
 
 - `motion_simulation`: simulating realistic motion artefacts in T2*w GRE MRI data
 - `line_det_network`: training and testing a k-space line detection network, using the [IML-CompAI Framework](https://github.com/compai-lab/iml-dl) 
 - `evaluation`: evaluating the proposed method, using the [medutils package](https://github.com/khammernik/medutils) for the TV reconstruction
 
+All computations were performed using Python 3.8.12 and PyTorch 1.13.0.
 
-## Prerequisites:
+
+## Setup:
 
 1. Create a virtual environment with the required packages:
     ```
@@ -71,18 +88,5 @@ Weighted reconstructions show subtly redued artefacts:
 
 ![Results_example_recons](/results_example_recons.pdf?raw=true "Demonstration of weighted reconstructions with TV regularisation for simulated data with very mild and slightly stronger motion (top/bottom row, mean displacement during whole scan: 0.50/0.89 mm).")
 
-For a more detailed description of the results please refer to our paper.
+For a more detailed description of the results please refer to our [preprint](https://arxiv.org/abs/2303.10987).
 
-
-## Citation
-If you use this code, please cite
-
-```
-@InProceedings{eichhorn2023deep,
-      title={Physics-Aware Motion Simulation for {T2*}-Weighted Brain {MRI}}, 
-      author={Hannah Eichhorn and Kerstin Hammernik and Veronika Spieker and Samira M. Epp and Daniel Rueckert and Christine Preibisch and Julia A. Schnabel},
-      booktitle="Simulation and Synthesis in Medical Imaging. SASHIMI 2023. Lecture Notes in Computer Science",
-      year={2023},
-      publisher={Springer International Publishing}
-}
-```
