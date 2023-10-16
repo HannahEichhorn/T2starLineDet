@@ -2,7 +2,7 @@
 
 **Hannah Eichhorn**, Kerstin Hammernik, Veronika Spieker, Samira M. Epp, Daniel Rueckert, Christine Preibisch, Julia A. Schnabel
 
-Paper accepted at [MICCAI 2023 SASHIMI workshop](https://2023.sashimi-workshop.org/) | [Preprint](https://arxiv.org/abs/2303.10987).
+Accepted at [MICCAI 2023 SASHIMI workshop](https://2023.sashimi-workshop.org/) | [Link to paper](https://link.springer.com/chapter/10.1007/978-3-031-44689-4_5#chapter-info).
 
 **Abstract:** *In this work, we propose a realistic, physics-aware motion simulation procedure for T2\*-weighted magnetic resonance imaging (MRI) to improve learning-based motion correction. As T2\*-weighted MRI is highly sensitive to motion-related changes in magnetic field inhomogeneities, it is of utmost importance to include physics information in the simulation. Additionally, current motion simulations often only assume simplified motion patterns. Our simulations, on the other hand, include real recorded subject motion and realistic effects of motion-induced magnetic field inhomogeneity changes. We demonstrate the use of such simulated data by training a convolutional neural network to detect the presence of motion in affected k-space lines. The network accurately detects motion-affected k-space lines for simulated displacements down to ≥ 0.5mm (accuracy on test set: 92.5%). Finally, our results demonstrate exciting opportunities of simulation-based k-space line detection combined with more powerful reconstruction methods.*
 
